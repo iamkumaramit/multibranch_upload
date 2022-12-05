@@ -1,6 +1,6 @@
 
 def appName ="Jenkins_test_app"
-def namePath = "nestedBranch/CollectionUpload/Deployable/var/collection/var/component/var/${currentBuild.number}"
+def namePath = "vars/nestedBranch/CollectionUpload/Deployable/var/collection/var/component/var/${currentBuild.number}"
 // def namePath ='' 
 def deplyName = 'Test'
 def componentUploadResponse =''
@@ -66,7 +66,7 @@ pipeline {
                                         namePath: "${namePath}",
                                         autoCommit:"${commit}",
                                         autoValidate:"${validate}",
-                                        changesetNumber:"${changesetNumber}",
+                                        changesetNumber:"${componentUploadResponse}",
                                         convertPath:"${convertPath}",
                                         collectionName:"${collectionName2}",
                                         showResults:true
