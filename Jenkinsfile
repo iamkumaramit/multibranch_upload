@@ -1,6 +1,6 @@
 
 def appName ="Jenkins_test_app"
-def namePath = "master/CollectionUpload/Deployable/var/collection/var/component/var/${currentBuild.number}"
+def namePath = "vars/master/CollectionUpload/Deployable/var/collection/var/component/var/${currentBuild.number}"
 // def namePath ='' 
 def deplyName = 'Test'
 def componentUploadResponse =''
