@@ -66,7 +66,7 @@ pipeline {
                                         namePath: "${namePath}",
                                         autoCommit:"${commit}",
                                         autoValidate:"${validate}",
-                                        changesetNumber:"${changesetNumber}",
+                                        changesetNumber:"${componentUploadResponse}",
                                         convertPath:"${convertPath}",
                                         collectionName:"${collectionName2}",
                                         showResults:true
