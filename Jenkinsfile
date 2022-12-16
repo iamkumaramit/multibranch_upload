@@ -39,41 +39,41 @@ pipeline {
                 echo "CONVERTPATH: ${convertPath}"
                 echo "COMMIT: ${commit}"
                 echo "BRANCH NAME: ${env.NODE_NAME}"
-          script{
+//           script{
               
                //with changesetNumber and deployable
-                componentUploadResponse = snDevOpsConfigUpload(
-                    applicationName: "${appName}",
-                    deployableName: "${deplyName}",
-                    dataFormat: "${dataFormat}",
-                    configFile: "${configFile}",
-                    target:"${target}",
-                    namePath: "${namePath}",
-                    //autoCommit:"",
-                    autoValidate:"${validate}",
-                    changesetNumber:"",
-                    convertPath:"${convertPath}",
-                    collectionName:"${collectionName1}",
-                    showResults:true
-                    )
+//                 componentUploadResponse = snDevOpsConfigUpload(
+//                     applicationName: "${appName}",
+//                     deployableName: "${deplyName}",
+//                     dataFormat: "${dataFormat}",
+//                     configFile: "${configFile}",
+//                     target:"${target}",
+//                     namePath: "${namePath}",
+//                     //autoCommit:"",
+//                     autoValidate:"${validate}",
+//                     changesetNumber:"",
+//                     convertPath:"${convertPath}",
+//                     collectionName:"${collectionName1}",
+//                     showResults:true
+//                     )
                     
-                    componentUploadResponse = snDevOpsConfigUpload(
-                                        applicationName: "${appName}",
-                                        deployableName: "${deplyName}",
-                                        dataFormat: "${dataFormat}",
-                                        configFile: "${configFile}",
-                                        target:"${target}",
-                                        namePath: "${namePath}",
-                                        autoCommit:"${commit}",
-                                        autoValidate:"${validate}",
-                                        changesetNumber:"${componentUploadResponse}",
-                                        convertPath:"${convertPath}",
-                                        collectionName:"${collectionName2}",
-                                        showResults:true
-                                        )
+//                     componentUploadResponse = snDevOpsConfigUpload(
+//                                         applicationName: "${appName}",
+//                                         deployableName: "${deplyName}",
+//                                         dataFormat: "${dataFormat}",
+//                                         configFile: "${configFile}",
+//                                         target:"${target}",
+//                                         namePath: "${namePath}",
+//                                         autoCommit:"${commit}",
+//                                         autoValidate:"${validate}",
+//                                         changesetNumber:"${componentUploadResponse}",
+//                                         convertPath:"${convertPath}",
+//                                         collectionName:"${collectionName2}",
+//                                         showResults:true
+//                                         )
                 
-            }
-                echo " RESPONSE FROM UPLOAD : ${componentUploadResponse}"
+//             }
+                echo " RESPONSE FROM UPLOAD"
                 
             }
         }
