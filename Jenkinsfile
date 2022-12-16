@@ -1,13 +1,12 @@
-
 def appName ="Jenkins_test_app"
-def namePath = "vars/master/var/${currentBuild.number}"
+def namePath = "${currentBuild.number}/multifolder"
 // def namePath ='' 
 def deplyName = 'Test'
 def componentUploadResponse =''
 def deployableUploadResponse =''
 def dataFormat ='json'
-def configFile ='config/application/Collection/Collection1/*.json'
-def target ='collection'
+def configFile ='config/application/Collection/Collection1/ConfigColl1File1.json'
+def target ='deployable'
 def commit =true
 def validate =true
 def convertPath =true
@@ -96,7 +95,40 @@ pipeline {
                 echo "export finished successfully."
             }
         }
-    }
+        stage("Register pipeline using ChangesetNumber")
+        {
+          steps
+          {
+            echo "Registering pipeline using changesetNumber:${changesetNumber}"
+            script
+            {
+              changeSetRegResult = snDevOpsConfigRegisterPipeline(
+              applicationName:"${appName}",
+              changesetNumber:"${changesetNumber}",
+              showResults:true)
+
+              echo "Pipeline registration result using changesetNumber: ${changeSetRegResult}"  
+        
+            }
+          }
+        }
+        stage("Register pipeline using Snapshot")
+        {
+          steps
+          {
+              echo "Registering pipeline using snapshotName:${snapshotName}"
+              script
+              {
+                changeSetRegResult = snDevOpsConfigRegisterPipeline(
+                applicationName:"${appName}",
+                snapshotName:"${snapshotName}"
+                ,showResults:true)
+                echo "Pipeline registration result using snapshot: ${changeSetRegResult}"  
+        
+              }
+            }
+          }
+        }
     // post{
     //     always{
     //         junit '**/*.dpl.xml'
