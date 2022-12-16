@@ -1,5 +1,5 @@
 def appName ="Jenkins_test_app"
-def namePath = "${currentBuild.number}/multifolder"
+def namePath = "${currentBuild.number}"
 // def namePath ='' 
 def deplyName = 'Test'
 def componentUploadResponse =''
