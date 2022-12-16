@@ -51,7 +51,7 @@ pipeline {
                     namePath: "${namePath}",
                     //autoCommit:"",
                     autoValidate:"${validate}",
-                    changesetNumber:"${changesetNumber}",
+                    changesetNumber:"",
                     convertPath:"${convertPath}",
                     collectionName:"${collectionName1}",
                     showResults:true
