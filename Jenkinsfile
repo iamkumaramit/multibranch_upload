@@ -10,13 +10,14 @@ def target ='deployable'
 def commit =true
 def validate =true
 def convertPath =true
-def changesetNumber =''
+def changesetNumber ='Chset-182'
 def finalresponse =''
 def chngsetToRegister =''
 def regChngeSet =''
 def res=''
 def collectionName1="Coll_1"
 def collectionName2="Coll_2"
+def snapshotName ="Test-v25.dpl"
 pipeline {
     agent any
     stages {
